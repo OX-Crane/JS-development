@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 数据类型就是字面量的类型
+            在JS中一共有6种JS数据类型
+                String 字符串
+                Number 数值
+                Boolean 布尔值
+                Null 空值
+                Undefined 未定义
+                Object 对象
+
+            其中 String Number Boolean Null Undefined 属于基本数据类型
+            而Object属于引用数据类型
+        */
+
+        /* 
+            String字符串
+             - 在JS中字符串需要用引号引起来
+             - 使用双引号或者单引号都可以
+             - 引号嵌套要区分双引号与单引号
+        */
+       var str = "hello";
+       str = '我说："今天的风儿甚是喧嚣"!';
+       console.log(str);
+       /* 在字符串中可以使用\作为转译字符、
+          当表示一些特殊符号时可以使用\进行转译
+          \"表示一个双引号
+          \'表示一个单引号
+          \n表示换行
+          \t表示制表符(即按了一下Tab键)
+          \\表示\
+       */
+      str = "我说：\"今天的风儿甚是喧嚣\"";
+      console.log(str);
+
+        /* 
+            在JS中所有的数值都是Number类型，
+            包括整数和浮点数
+        */
+       //数字123
+       var n1 = 123;
+       n1 = 456;
+       var n2 = 789.456;
+       //数字的最大值为Number.MAX_VALUE
+       console.log("JS中最大的值"+Number.MAX_VALUE);
+       /* infinity表示正无穷，是一种字面量
+          在有比 Number.MAX_VALUE更大的数值时
+          则会输出infinity  
+          -infinity表示负无穷
+          Number.MIN_VALUE表示零以上最小的值
+       */
+      console.log("零以上最小的值"+Number.MIN_VALUE);
+        /* 
+            NaN其含义为 Not a Number
+            在用typeof检查一个字面量的数据类型时返回值也是number
+        */
+       var n3 = "helloWorld"*123;
+       console.log("输出n3的值:"+n3);  
+       console.log("判断n3的数据类型："+typeof n3);
+       //字符串123
+       var str_n = "123";
+       console.log(n1);
+       console.log(n2);
+       console.log(str_n);
+       /* 
+            可以用typeof检查数据类型
+            语法： typeof 变量
+        */
+        console.log("n1的数据类型为:"+typeof n1);
+        console.log("str_n的数据类型为:"+typeof str_n);
+        /* 
+            如果使用JS进行运算，可能得到一个不精确的数字
+            所以不要使用JS进行对精确度较高的运算
+        */
+       var n4 = 0.2 + 0.1;
+       console.log("0.2+0.1的结果为："+n4);
+
+        /* 
+            Boolean 布尔值
+            布尔值只有两个值
+             - true
+             - false
+        */
+       var bool = true;
+       console.log(bool);
+       console.log("bool的数据类型为"+typeof bool);
+
+       /* 
+        Null类型的值只有一个，就是null
+            null这个值专门用来表示为空的对象
+       */
+      var nu = null;
+      console.log(nu);
+      console.log(typeof nu);
+
+      /* 
+        Undefined类型的值只有一个，就是Undefined
+        当一个字面量只声明，不赋值时就是undefined
+      */
+     var u;
+     console.log(u);
+
+     /* 
+        强制类型转换
+        - 指将一个数据类型强制转换为其他数据类型
+        - 类型转换主要指，将其他的数据类型，转换为
+            String Number Boolean
+     */
+
+     /* 
+        将其他的数据类型转换为String
+          方法一：
+            - 调用被转换数据类型的toString()的方法
+            - 该方法不会影响到原变量，它会将转换的结果返回
+            - 但是注意null和undefined这两个值没有toString()的方法
+          方法二：
+            - 调用String()函数,并将被转换的数据作为参数传递给函数
+            - 该函数也可以应用到null与undefined上
+                在调用String()函数时
+                    - 对于numbe和boolean就是调用toString()方法
+                    - 对于null和undefined则是将null直接转换为"null",undefined同理
+     */
+    var num = 123;
+    console.log("num的值为"+num);
+    console.log("num的数据类型为"+typeof num);
+    /* 
+        方法一的实践：调用toString()的方法
+        ！！！注意()
+    */
+   var num = num.toString();
+   console.log("num的值为："+num);
+   console.log("num的数据类型为："+typeof num);
+
+   num = null;
+   //num = num.toString();  会报错
+   num = undefined;
+   //   num = num.toString(); 会报错
+
+   /* 
+        方法二的实践：调用String()函数
+   */
+   num = 123;
+   num = String(num);
+   console.log("num的值为："+num);
+   console.log("num的数据类型为："+typeof num);
+   num = null;
+   num = String(num);
+   console.log("num的值为："+num);
+   console.log("num的数据类型为："+typeof num);
+   num = undefined;
+   num = String(num);
+   console.log("num的值为："+num);
+   console.log("num的数据类型为："+typeof num);
+   /* 
+        将其他数据类型转换为Number
+            转换方式一：
+                - 使用Number()函数  用法同String()
+                    - 字符串-->数字
+                        1.如果是纯数字的字符串，则直接将其转换为数字
+                        2.如果字符串有非数字内容的话，则输出NaN
+                        3.如果字符串是一个空串或者由一个或多个空格组成则将值转换为0
+                    - 布尔-->数字
+                        true--->1
+                        flase-->0
+                    - Null转数字
+                        0
+                    - Undefined转数字
+                        NaN
+            转换方式二：
+                 - 这种方式专门用来对付字符串
+                 - parseInt()把一个字符串转换为一个整数,即将字符串中的有效数字转为number 读取顺序为：从左到右 一旦遇到NaN就不读取了
+                 - parseFloat()把一个字符串转换为一个浮点数,类似parseInt();           
+   */
+
+   /* 方法一的实践
+        调用Number()函数
+   */
+  //1
+   var str = "123";
+   str = Number(str);
+   console.log("str的值为："+str);
+   console.log("str的数据类型为："+typeof str);
+   //2
+   str = "abc";
+   str = Number(str);
+   console.log("str的值为："+str);
+   console.log("str的数据类型为："+typeof str);
+   //3
+   str = "";    var str2 = "      ";
+   str = Number(str);   str2 = Number(str2);
+   console.log("str的值为："+str);  console.log("str2的值为："+str2);
+   console.log("str的数据类型为："+typeof str); console.log("str2的数据类型为："+typeof str2);
+   //将boolean转换为number
+   var bo = true;
+   bo = Number(bo);
+   console.log("bo的值为："+bo);
+   console.log("bo的数据类型为："+typeof bo);
+   /* 
+        方法二的实践
+            调用parseInt()函数
+   */
+  var px = "123px";
+  px = parseInt(px);
+  console.log("px的值为："+px);
+  console.log("px的数据类型为："+typeof px);
+  /* 
+        方法二的实践
+            调用parseFloat()函数
+  */
+   var px2 = "123.456px";
+   px2 = parseFloat(px2);
+   console.log("px2的值为："+px2);
+   console.log("px2的类型为："+typeof px2);     
+   /* 
+        在对非String类型的数据进行praseInt()或praseFloat操作时
+        它会先将数据转为String类型，在进行操作
+   */
+    var noString = true;
+    noString = parseInt(noString);
+    console.log("noString的值为："+noString);
+    console.log("noString的数据类型为："+typeof noString);
+
+    /* 
+        将其他数据类型转换为Boolean
+            - 使用Boolean()函数
+                数字-->布尔
+                    除了0和NaN其余都是true
+                字符串-->布尔
+                    除了空串其余的都是true
+                null和undefined都是false
+                对象也会转换为true        
+    */      
+   /* 
+        数字转布尔实践
+   */
+   var boo = 123;
+   console.log("boo的值为"+boo);
+   console.log("boo的数据类型为："+ typeof boo);
+   boo = Boolean(boo);
+   console.log("boo的值为"+boo);
+   console.log("boo的数据类型为："+ typeof boo);
+   /* 
+        字符串转布尔实践
+   */
+    var st = "hello";
+    console.log("st的值为："+st);
+    console.log("st的数据类型为："+typeof st);
+    st = Boolean(st);
+    console.log("st的值为："+st);
+    console.log("st的数据类型为："+typeof st);
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>

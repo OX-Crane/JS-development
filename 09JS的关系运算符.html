@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            通过关系运算符可以比较两个值之间的大小关系
+                如果关系成立则返回true，反之返回false
+         */
+
+
+         /* 
+            >大于号         >=大于等于          .......
+
+            对于非数值进行比较时，会将其转换为数字然后在比较
+            如果两边都是字符串，则不会将其转换为数字，而是比较其Unicode编码
+          */
+        var result = 5 > 10;
+        console.log("result="+result);//false
+        result = 1 > true;
+        console.log("result="+result);//false
+        result = 2 > "1";
+        console.log("result="+result);//true
+        result = 10 > null;
+        console.log("result="+result);//true
+        /* 
+            任何值与NaN进行比较都是false
+        */
+       result = 10 > NaN;
+       console.log("result="+result);//false
+       result = "11" < "5";//比较其Unicode编码
+       console.log("result="+result);
+       result = "a" < "b";//比较其Unicode编码
+       console.log("result="+result);
+       /* 
+            比较字符编码时，一位一位进行比较
+            如果两位一样则比较下一位
+       */
+      result = "abc" < "b";
+      console.log("result="+result);
+
+      /* 
+        Unicode编码
+            在字符串中使用转义字符输出Unicode编码
+                \u+四位编码
+      */
+     console.log("\u2620");
+    </script>
+</head>
+<body>
+    <!-- 
+        在网页中使用Unicode编码
+        &#编码;这里的编码需要10进制
+     -->
+     <a style="font-size: 100px;">&#9760;</a>
+</body>
+</html>

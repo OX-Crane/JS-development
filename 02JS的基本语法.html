@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- script标签一旦被引入外部文件，就不能编写写代码了，写了浏览器也会忽略 -->
+    <script src="JS/02.js">
+        alert("我是内部文件的JS代码");
+    </script>
+    <!-- 若果需要则可以再创建一个script标签 -->
+    <script>
+        alert("我是内部JS文件");
+    </script>
+</head>
+<body>
+    <!-- 可以将JS写在标配的onclick里 当我点击按钮时JS代码才会执行 -->
+    <button onclick="alert('试试就试试');">点我一下试试</button>
+    <!-- 可以将JS代码写在超链接的href属性中，这样当点击超链接时可以执行JS代码 
+        但是不推荐，他们属于行为与结构耦合，不方便后期的维护-->
+    <a href="javascript:alert('showtime')">点我一下1（a标签的JS）</a>
+    <a href="javascript:">点我一下2（a标签的JS）</a>
+</body>
+</html>

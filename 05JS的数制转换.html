@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            在JS中，如果需要有16进制的数，要以0x开头
+                             8              0开头
+                             2              0b开头
+                        但不是所有浏览器都支持
+        */
+        var a = 0x123;
+        console.log(a);
+        //有些浏览器会当成2进制有些浏览器会当成10进制进行解析
+        var b = "070";
+        b = parseInt(b);
+        console.log(b);
+        // 可以在parseInt中传递第二个参数，来告诉浏览器这个数字是几进制的
+        b = parseInt(b,8);
+        console.log(b);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

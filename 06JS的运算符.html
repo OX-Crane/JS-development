@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            运算符也叫操作符
+            通过运算符可以对一个值或多个值进行运算
+            比如同typeof
+            它会将该值的类型一字符串的形式返回
+            算数运算符：    +   -   *   /   %
+            任何数值与NaN做运算值都为NaN
+        +   如果对两个字符串进行加法操作则会进行拼串操作
+            任何值与字符串进行加法运算会先转换成字符串在进行加法运算（只有加法是这样的）
+                我们可以利用这一特点，来将任意数据类型转换为String
+                我们只需要为任意的数据类型+一个""即可将其转换为String
+                这是一种隐式的类型转换，由浏览器自动完成，实际上它也是调用了String()函数
+        -   在进行减法运算时
+                数字与字符串进行减法运算
+                    把字符串转换成数字，在进行运算
+         */
+        /* 
+            加法
+        */
+         var a = 123;
+         var result = typeof a;
+         console.log("typeof a的值为"+result);
+         console.log("typeof a的数据类型为"+typeof result);
+         result = true + 1;
+         console.log(result);
+         result = true +false;
+         console.log(result);
+         result = 1 + null;
+         console.log(result);
+         result = "123" + "456";
+         console.log(result);
+         console.log(typeof result);
+         result = result + a;
+         console.log(result);
+         console.log(typeof result);
+         var c = 123;
+         c = c + "";
+         console.log(c);
+         console.log(typeof c);
+         var na = NaN;
+         na = na + "";
+         console.log(na);
+         console.log(typeof na);
+         /* 
+            减法
+         */
+        result = 100 - true;
+        console.log(result);
+        result = 100 - "1";
+        /* 
+            乘法
+        */
+       result = 2 * 2;
+       console.log(result);
+       result = 2 * "8";
+       console.log(result);
+       result = 2 * undefined;
+       console.log(result);
+       result = 2 * null;
+       console.log(result);
+       /* 
+            除法
+       */
+      result = 4 / 2;
+      console.log(result);
+      result = 3 / 2;
+      console.log(result);
+      /* 
+        在 减 乘 除 中都会自动转换为Number
+            我们可以利用这一特点做隐式的类型转换
+                我们可以通过为一个值 -0 *1 /1来将其转换
+      */
+     var d = "123";
+     d = d - 1;
+     console.log(d);
+     console.log(typeof d);
+     /* 
+        %求余运算符
+     */
+    result = 9 % 3;
+    console.log(result);
+    result = 9 % 4;
+    console.log(result);
+    result = 9 % 5;
+    console.log(result);
+    
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

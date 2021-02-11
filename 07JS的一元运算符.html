@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            一元运算符，只需要一个运算符
+                + 正号 
+                - 负号
+            对于非Number类型的值
+                它会将先转换为Number，然后在进行运算
+                可以对一个其他类型的值进行+运算，将其转化为Number
+                其原理与Number()一样
+         */
+         var a = 123;
+         a = +a;
+         console.log(a);
+         a = true;
+         a = -a;
+         console.log("true的取反结果为"+a);
+         console.log(typeof a);
+
+         var result = 1 + +2 +3;
+         console.log("result="+result);
+
+         /* 
+            自增运算符++
+                - 通过使用自增运算符可以使变量加1
+                - 一个变量自增后，原变量的值会立即加1
+                - 自增分为两种 ++a 与 a++
+            自减运算符--
+                - 通过使用自增运算符可以使变量-1
+                - 同样分为两种 a-- 与 --a
+                - 运算后，原变量的值会立即减1
+                不同的是a-- 与 --a的值不同
+                输出a--是a的值
+                输出--a是a-1的值
+
+         */
+        a = 1;
+        a = a + 1;
+        console.log(a);
+        // 使a加1
+        a++;
+        console.log(a);
+        var d = 20;
+        d = d++;
+        console.log("d=d++的运算结果为"+d);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

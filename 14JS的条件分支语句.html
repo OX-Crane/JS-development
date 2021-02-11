@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        /* 
+            条件分支语句switch
+                语法：
+                    switch(条件表达式){
+                        case 表达式:
+                                语句。。。
+                                break;
+                        case 表达式:
+                                语句。。。
+                                break;
+                        case 表达式:
+                                语句。。。
+                                break;
+                        default:
+                                语句。。。
+                                break;
+                    }
+        */
+       var num = 3;
+       switch(num){
+           case 1:
+               console.log("num="+num);
+               break;
+            case 2:
+                console.log("num="+num);
+                break;
+            case 3:
+                console.log("num="+num);
+                break;
+            default:
+                console.log("找不到");
+                break;
+       }
+
+       var scorse = 60;
+       
+       switch(true){
+           case scorse >= 60:
+               console.log("合格");
+               break;
+            default:
+                console.log("不合格");
+                break; 
+       }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
