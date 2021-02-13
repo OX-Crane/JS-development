@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            break关键字可以用来退出switch或循环语句
+            break关键字会立即终止离他最近的那个循环句
+        */
+       for(var i = 0; i < 5; i++){
+           console.log(i);
+           break;
+       }
+      /*  if(true){
+           break;
+           console.log("hello");
+           不能在if语句使用break和continue
+       } */
+       for(i = 0; i < 5; i++){
+           console.log(i);
+           if(i == 2){
+               break;
+           }
+       }
+
+       for(i = 0; i < 5; i++){
+           console.log("****外层循环"+i);
+           for(var j = 0; j < 5; j++){
+               break;
+               console.log("内层循环"+j);
+           }
+       }
+
+       /* 
+            可以为循环语句创建一个label，来标识当前的循环
+            语法：
+                label:循环语句
+            使用break语句时，可以在break后跟着一个label
+            这样break将会结束指定的循环，而不是最近的
+       */
+      outer:
+      for(i = 0; i < 5; i++){
+           console.log("@外层循环"+i);
+           for(var j = 0; j < 5; j++){
+               break outer;
+               console.log("内层循环"+j);
+           }
+       }
+
+       /* 
+            continue语句
+            与break用法一样
+       */
+      for(i = 0; i < 5; i++){
+          if(i == 2){
+              continue;
+          }
+          console.log(i+"*******");
+      }
+
+      /* 
+            测试如下的程序的性能
+            在程序执行前，开启计时器
+            console.time("计时器的参数")可以用来开启一个计时器
+            他需要一个字符串作为参数，这个字符串将作为计时器的标识
+      */
+     console.time("test0");
+       /* 
+            质数练习：打印1——100的质数
+        */
+        for(i = 2; i <= 100; i++){
+           var flag = true;//默认为质数
+           for(j = 2; j < i; j++){
+               if(!(i % j)){
+                   flag = false;
+                   break;
+               }
+           }
+           if(flag){
+               console.log(i);
+           }
+       }
+    console.timeEnd("test0");
+
+    /* 
+        质数练习的改进
+    */
+    /* 
+            测试如下的程序的性能
+            在程序执行前，开启计时器
+            console.time("计时器的参数")可以用来开启一个计时器
+            他需要一个字符串作为参数，这个字符串将作为计时器的标识
+      */
+      console.time("test1");
+       /* 
+            质数练习：打印1——100的质数
+        */
+        for(i = 2; i <= 100; i++){
+           var flag = true;//默认为质数
+           for(j = 2; j <= i^1/2; j++){
+               if(!(i % j)){
+                   flag = false;
+                   break;
+               }
+           }
+           if(flag){
+               console.log(i);
+           }
+       }
+    console.timeEnd("test1");
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
