@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            函数也可以成为对象的属性
+                如果函数作为对象的属性保存
+                我们称这个函数是这个对象的方法
+                调用函数称为调用对象的方法
+
+        */
+       var obj = new Object();
+       obj.name = "孙悟空";
+       obj.age = 1800;
+       obj.sayName = function(){
+            console.log(obj.name);
+       };
+       var fun = function(){
+            console.log(obj.name);
+       }
+       //掉函数
+       fun();
+       //掉方法
+       obj.sayName();
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

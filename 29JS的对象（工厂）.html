@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+       
+       var obj = {
+           name:"孙",
+           age:1800,
+           sex:"男"
+       };
+       /* 
+       
+        使用工厂方法创建对象
+        通过该方法可以大量创造对象
+       */
+      function createPerson(name, age, sex){
+          //创建一个新对象
+          var obj = new Object(); 
+          obj.name = name;
+          obj.age = age;
+          obj.sex = sex;
+          //将新对象返回
+          return obj;
+      }
+      var obj2 = createPerson("猪八戒",1500,"男");
+      for(var n in obj2){//会将属性名赋值给n
+        console.log("属性名："+n);
+        console.log("属性值为："+obj2[n]); 
+      }
+      
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
