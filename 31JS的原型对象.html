@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            原型prototype
+
+            我们所创建的每一个函数，解析器都会向函数中添加一个属性prototype
+                这个属性对应着一个对象，这个对象就是我们所谓的原型对象
+            如果函数作为普通函数调用prototype没有任何作用
+            当函数以构建函数的形式调用时，它所创建的对象都会有一个隐含属性
+                指向该构造函数的原型对象
+
+            原型对象就相当于一个公共区域，所有同一个类的实例都可以访问到这个原型对象
+                我们可以将对象中共有的内容，统一设置到原型对象中
+
+            当我们访问一个对象的属性或方法时，它会先在自身对象寻找，如果有则直接用
+            如果没有则会取原型对象中寻找，找到直接用
+
+            以后我们创建函数中，可以将这些对象共有的函数 变量，统一添加到构造函数的原型对象，
+            这样不用分别为每一个对象添加，也不会影响到全局作用域，就可以使每个对象都具有这些属性和方法了
+         */
+         function Person(name, age, sex){
+           this.name = name;
+           this.age = age;
+           this.sex = sex;
+       }
+      Person.prototype.sayName = function(){
+          console.log(this.name);
+      };
+    
+       var per = new Person("孙",1800,"男");
+       var per2 = new Person("孙1",1800,"男");
+       for(var n in per){
+           console.log("属性名为:"+n);
+           console.log("属性值为:"+per[n]);
+       }
+
+       function Dog(name, age){
+           this.name = name;
+           this.age = age;
+       }
+       Dog.prototype.sayName = function(){
+        console.log(this.name);
+       };
+       var dog = new Dog("阿拉斯加",4);
+       for(var n in dog){
+           console.log("属性名为:"+n);
+           console.log("属性值为:"+dog[n]);
+       }
+       console.log(per);
+       console.log(dog);
+       per.sayName();
+       dog.sayName();
+
+
+      
+     
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            数组
+
+            内建对象
+
+            宿主对象
+            
+            自定义对象
+
+            数组(array)
+                也是对象
+                他和我们普通对象功能类似，也是用来储备一些值的
+                不同的是普通对象是使用字符作为属性名
+                而数组时使用数字
+         */
+         //创建数组对象
+         var arr = new Array();
+
+         arr[0] = 10;
+
+         console.log(arr[0]);
+
+         //获取数组长度
+         console.log(arr.length);
+
+         //使用字面量来创建数组
+        var arr1 = [];
+
+        var arr2 = [1,2,3,4,5];
+        /* 
+            向数组中添加10，20，30
+         */
+        var arr3 = new Array(10,20,30);
+        /* 
+            创建一个长度为10的数组
+         */
+        var arr4 = new Array(10);
+
+        console.log(arr4);
+
+        /* 
+            数组中可以放任何值
+         */
+
+         var arr5 = [1,true,"OX",null,undefined] ;
+
+        //  console.log(arr5[]);
+
+        /* 
+            也可以是对象
+         */
+
+         var obj = {name:"孙"};
+
+         arr5[arr5.length] = obj;
+
+         console.log(arr5[5]);
+
+         /* 
+            也可以是函数
+         */
+
+         var arr6 = [function(){alert(1)},function(){alert(2)}];
+
+         console.log(arr6);
+
+         /* 
+            数组中也可以放数组
+         */
+
+         var arr7 = [[1,2,3],[4,5,6][7,8,9]];
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            创建一个数组
+         */
+         var arr = ["孙","唐"];
+
+         /* 
+            push(),在数组末尾添加一个或多个元素
+            并返回数组最新的长度
+          */
+          var result = arr.push("猪","沙");
+          for(var i = 0; i < arr.length; i++){
+              console.log(arr[i]);
+          }
+          console.log(result);  
+
+          /* 
+            pop(),删除数组的最后一个元素
+           */
+           result = arr.pop();
+           for(var i = 0; i < arr.length; i++){
+              console.log(arr[i]);
+          }
+          console.log(result);  
+
+          /* 
+            unshift(),向数组前添加一个或多个元素，并返回长度
+           */
+        arr.unshift("牛");
+        for(var i = 0; i < arr.length; i++){
+              console.log(arr[i]);
+          }
+
+          /* 
+          shift(),删除第一个元素，并返回改元素
+           */
+           var result = arr.shift();
+           for(var i = 0; i < arr.length; i++){
+              console.log(arr[i]);
+          }
+          console.log(result); 
+
+
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
