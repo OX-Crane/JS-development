@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+
+        /* 
+            数组的遍历，创建一个数组
+        */
+
+        var arr = ["孙","猪","沙","唐"];
+
+        for(var i = 0;i < arr.length; i++){
+            console.log(arr[i]);
+        }
+
+        function Person(name , age){
+            this.age = age;
+            this.name = name;
+        }
+        // // 修改Person原型的tostring
+        // Person.prototype.toString = function(){
+        //     return "Person[name ="+ this.name + ",age=" + this.age+"]"; 
+        // }
+
+        // 创建一个对象
+        var per = new Person("孙悟空",18);
+        var per2 = new Person("猪八戒",218);
+        var per3 = new Person("沙和尚",80);
+        var per4 = new Person("唐僧",16);
+        console.log(per);
+        // for(var n in per){
+        //     console.log("属性名为："+n);
+        //     console.log("属性值为："+per[n]);
+        // }
+        /* 
+            将这些Person对象放入数组中
+        */
+       var perarry = [per, per2, per3, per4];
+       console.log(perarry);
+
+       /* 
+            创建一个函数，可以将perarry中满18岁的提取出来
+            然后封装到一个新数组中并返回
+       */
+      var arr1 = new Array();
+            function narry (arr){
+                for(var i = n = 0; i < arr.length; i++){
+                    if(arr[i].age > 18){
+                        arr1[n] = arr[i];
+                        n++;
+                    }
+                }
+            }
+            narry(perarry);
+            console.log("封装后的新数组：");
+            console.log(arr1);
+
+            function getAdult(arr){
+                var newarr = [];
+               for(var i = 0; i < arr.length; i++){
+                    var p = arr[i];
+                    if(p.age > 18){
+                        //把对象放入新数组中
+                        newarr.push(p);
+                   }               
+               }
+                //将新数组返回
+                return newarr;
+            }
+            var result = getAdult(perarry);
+            console.log(result);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
